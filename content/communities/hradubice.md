@@ -1,6 +1,8 @@
 ---
 title: Hradec Králové a Pardubice
-region: Královéhradecký
+region:
+  - Královéhradecký
+  - Pardubický
 map:
   lat: 50.1224
   lng: 15.8032

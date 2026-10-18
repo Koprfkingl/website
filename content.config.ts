@@ -60,7 +60,10 @@ export default defineContentConfig({
           filter: community => community.hidden !== true,
         })).editor({ hidden: true }),
         hidden: property(z.boolean().optional()).editor({ description: 'Skryje komunitu z veřejné landing page, navigace, mapy a sitemap.' }),
-        region: z.string().trim().min(1),
+        region: z.union([
+          z.string().trim().min(1),
+          z.array(z.string().trim().min(1)).min(1),
+        ]),
         priority: z.number().int().nonnegative().optional(),
         map: property(z.object({
           lat: z.number().finite().min(48).max(52),
