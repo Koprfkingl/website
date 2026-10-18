@@ -1,7 +1,6 @@
 ---
 title: Ledeč nad Sázavou
 region: Vysočina
-priority: 1
 map:
   lat: 49.69594
   lng: 15.27279
