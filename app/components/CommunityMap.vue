@@ -21,7 +21,7 @@ const markers = computed(() => (data.value ?? []).flatMap((community) => {
     path: community.path,
     label: point.label,
     title: community.title,
-    region: community.region,
+    region: [community.region].flat().join(', '),
     ...projectCommunityCoordinate(point.lng, point.lat),
   }))
 }))
