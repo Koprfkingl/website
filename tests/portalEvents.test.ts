@@ -38,7 +38,7 @@ const storage = (values = new Map<string, unknown>()): PortalStorage => ({
 
 const fetcher = (events: unknown, meetupRows: unknown = meetups, calls: string[] = []): PortalFetch => async (url, options) => {
   calls.push(url)
-  assert.deepEqual(options, { timeout: 5_000, retry: 0 })
+  assert.deepEqual(options, { timeout: 20_000, retry: 0 })
   return url.endsWith('/meetups') ? meetupRows : events
 }
 

@@ -265,7 +265,8 @@ const nextRevision = (event: PortalEvent, previous: CachedEvent | undefined, now
 
 const fetchPayload = async (fetcher: PortalFetch, url: string) => {
   try {
-    return await fetcher(url, { timeout: 5_000, retry: 0 })
+    // The unfiltered meetup-events export is ~5 MB and routinely takes 4-5 s to build.
+    return await fetcher(url, { timeout: 20_000, retry: 0 })
   } catch (error) {
     const endpoint = url === portalMeetupsUrl ? 'meetups' : 'events'
     const status = isRecord(error)
